@@ -1,0 +1,51 @@
+/* Mağaza Sayfası */
+.product-card .img img {
+    width: 150px;
+}
+
+.product-card {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.product {
+    display: flex;
+}
+
+.add-card {
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5px;
+}
+
+/* Sepet */
+
+.qty {
+    display: flex;
+    justify-content: space-between;
+}
+
+.minus {
+    margin-right: 15px;
+}
+
+.plus {
+    margin-left: 15px;
+}
+
+/* Login */
+
+.login {
+    margin: auto;
+
+}
+
+.login-form {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 30px;
+    border-radius: 10%;
+        
+}
