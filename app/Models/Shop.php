@@ -11,4 +11,12 @@ class Shop extends Model
 
     protected $table = 'shops';
     protected $guarded = [];
+
+    public function getProducts(){
+        return $this->hasMany('App\Models\Product');
+    }
+
+    public function getCategory(){
+        return $this->hasMany('App\Models\Category');
+    }
 }

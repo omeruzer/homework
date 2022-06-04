@@ -21,11 +21,13 @@ class AuthController extends Controller
         $this->validate(request(), [
             'email'     => 'required|email',
             'password'  => 'required'
+
         ]);
 
         $credentials = [
             'email' => htmlspecialchars(request('email')),
             'password' => htmlspecialchars(request('password')),
+            'isAdmin' => 0
         ];
 
         if (Auth::attempt($credentials)) {

@@ -14,4 +14,8 @@ class Product extends Model
     public function getShop(){
         return $this->hasOne('App\Models\Shop');
     }
+
+    public function getCategory(){
+        return $this->hasOne('App\Models\Category','id','category_id');
+    }
 }

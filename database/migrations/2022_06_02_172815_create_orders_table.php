@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('scholl_no')->nullable();
             $table->string('name')->nullable();
             $table->string('email')->nullable();
+            $table->boolean('isCompleted')->default(0)->comment('0 verilmemiş / 1 verilmiş');
 
             $table->foreign('cart_id')->references('id')->on('carts')->onDelete('cascade');
             $table->foreign('shop_id')->references('id')->on('shops')->onDelete('cascade');

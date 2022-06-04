@@ -19,7 +19,7 @@ class CategorySeeder extends Seeder
 
         for ($i=0; $i < 50 ; $i++) { 
             Category::create([
-                'shop_id'=>rand(1,10),
+                'shop_id'=>rand(1,3),
                 'name'=>$faker->name
             ]);
         }

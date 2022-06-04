@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->unsigned();
             $table->string('img');
-            $table->string('email');
-            $table->string('password');
             $table->string('name');
             $table->string('desc');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

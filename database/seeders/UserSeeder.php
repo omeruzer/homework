@@ -18,20 +18,31 @@ class UserSeeder extends Seeder
     {
         $faker = \Faker\Factory::create(); 
 
-        for ($i=0; $i < 50 ; $i++) { 
-            User::create([
-                'scholl_no'=>rand(3000,10000),
-                'name'=>$faker->name(),
-                'email'=>$faker->email(),
-                'password' => Hash::make('asd'),
-            ]);
-        }
+        User::create([
+            'name'=>'Cafe1',
+            'email'=>"cafe1@gmail.com",
+            'password' => Hash::make('asd'),
+            'isAdmin'=>1
+        ]);
+        User::create([
+            'name'=>'Cafe2',
+            'email'=>"cafe2@gmail.com",
+            'password' => Hash::make('asd'),
+            'isAdmin'=>1
+        ]);
+        User::create([
+            'name'=>'Cafe3',
+            'email'=>"cafe3@gmail.com",
+            'password' => Hash::make('asd'),
+            'isAdmin'=>1
+        ]);
 
         User::create([
             'scholl_no'=>12044171,
             'name'=>'Ömer Uzer',
             'email'=>"omeruzer@gmail.com",
             'password' => Hash::make('asd'),
+            'isAdmin'=> 0
         ]);
     }
 }
