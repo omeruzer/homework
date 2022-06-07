@@ -24,85 +24,24 @@
                     </div>
                 </div>
 
-                <div class="row mb-3">
-                    <div class="col-md-12">
-                        <div class="float-right">
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"><i
-                                    class="fa fa-plus"></i> Ekle</button>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                {{-- Modal --}}
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-
-                            <form action="{{ route('admin.category.add') }}" method="post">
-                                @csrf
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <label for="">Kategori Adı</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Kategori Adı"
-                                            required>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <input type="submit" value="Kaydet" class="btn btn-info">
-                                </div>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-
                 <div class="row">
 
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="card mb-3">
-
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table id="example3" class="table table-bordered table-hover display">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>İşlemler</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($categories as $item)
-                                                <tr>
-                                                    <td>{{ $item->name }}</td>
-                                                    <td>
-                                                        <div class="">
-                                                            <a href="{{ route('admin.category.edit', [$item->id]) }}"><button class="btn btn-warning"><i
-                                                                        class="fa fa-edit"></i></button></a>
-                                                            <a href="{{ route('admin.category.remove', [$item->id]) }}"><button
-                                                                    class="btn btn-danger"><i
-                                                                        class="fa fa-trash"></i></button></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <form action="{{route('admin.category.editPost',[$category->id])}}" method="post" >
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Kategori Adı</label>
+                                        <input type="text" name="name"  class="form-control" id="exampleInputEmail1" placeholder="Kategori Adı" required value="{{$category->name}}">
+
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                                </form>
 
                             </div>
                         </div><!-- end card-->
                     </div>
-
-
                 </div>
 
 

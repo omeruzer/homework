@@ -20,4 +20,40 @@ class CategoryController extends Controller
         return view('admin.category',compact("categories"));
     }
 
+    public function add(){
+        $this->validate(request(),[
+            'name'=>'required'
+        ]);
+
+        $shop_id = Shop::where('user_id',Auth::id())->first();
+
+        Category::create([
+            'shop_id' =>$shop_id->id,
+            'name'=>request('name'),
+        ]);
+
+        return redirect()->back()->with('message', 'İşlem Başarıyla Gerçekleşti')->with('message_type', 'success');
+    }
+
+    public function remove($id){
+
+        Category::where('id',$id)->delete();
+
+        return redirect()->back()->with('message', 'İşlem Başarıyla Gerçekleşti')->with('message_type', 'success');
+    }
+
+    public function edit($id){
+        $category = Category::where('id',$id)->first();
+
+        return view('admin.categoryEdit',compact('category'));
+    }
+
+    public function editPost($id){
+        $category = Category::where('id',$id)->update([
+            'name'=>request('name')
+        ]);
+
+        return redirect()->back()->with('message', 'İşlem Başarıyla Gerçekleşti')->with('message_type', 'success');
+    }
+
 }

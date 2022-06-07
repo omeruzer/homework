@@ -16,7 +16,7 @@
 
                     </div>
                 </div>
-
+                <!-- end row -->
                 <div class="row">
                     <div class="col-xl-12">
                         @include('error')
@@ -24,111 +24,43 @@
                     </div>
                 </div>
 
-                <!-- end row -->
-                <div class="row mb-3">
-                    <div class="col-md-12">
-                        <div class="float-right">
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"><i
-                                    class="fa fa-plus"></i> Ekle</button>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                {{-- Modal --}}
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <form action="{{ route('admin.product.add') }}" method="post">
-                        @csrf
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <label for="">Ürün Resmi</label>
-                                        <input type="text" name="img" class="form-control" placeholder="Ürün Resmi"
-                                            aria-describedby="helpId">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Ürün Adı</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Ürün Adı"
-                                            aria-describedby="helpId">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Kategori</label>
-                                        <select class="form-control" name="category_id" id="">
-                                            <option value="">Kategori Seçin</option>
-                                            @foreach ($categories as $item)
-                                                <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                            @endforeach
-                                        </select>
-
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Fiyat</label>
-                                        <input type="text" name="price" class="form-control" placeholder="Fiyat"
-                                            aria-describedby="helpId">
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <input type="submit" value="Kaydet" class="btn btn-info">
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
                 <div class="row">
 
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="card mb-3">
-
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table id="example3" class="table table-bordered table-hover display">
-                                        <thead>
-                                            <tr>
-                                                <th>Resim</th>
-                                                <th>Ürün Adı</th>
-                                                <th>Kategori</th>
-                                                <th>Fiyat</th>
-                                                <th>İşlemler</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($products as $item)
-                                                <tr>
-                                                    <td style="width: 10%;">
-                                                        <img style="width: 100%" src="{{ $item->img }}" alt="">
-                                                    </td>
-                                                    <td>{{ $item->name }}</td>
-                                                    <td>{{ $item->getCategory->name }}</td>
-                                                    <td>{{ $item->price }}₺</td>
-                                                    <td>
-                                                        <div class="">
-                                                            <a href="{{ route('admin.product.edit', [$item->id]) }}"><button
-                                                                class="btn btn-warning"><i
-                                                                    class="fa fa-edit"></i></button></a>                                                            <a href="{{ route('admin.product.remove', [$item->id]) }}"><button
-                                                                    class="btn btn-danger"><i
-                                                                        class="fa fa-trash"></i></button></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                <form action="{{route('admin.product.editPost',[$product->id])}}" method="post" >
+                                    @csrf
+                                    <div class="form-group" style="display: grid">
+                                        <label for="exampleInputEmail1">Ürün Resmi</label>
+                                        <img style='width: 50%' src="{{$product->img}}" alt="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Ürün Resmi</label>
+                                        <input type="text" name="img"  class="form-control" id="exampleInputEmail1" placeholder="Ürün Resmi" required value="{{$product->img}}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Ürün Adı</label>
+                                        <input type="text" name="name"  class="form-control" id="exampleInputEmail1" placeholder="Ürün Adı" required value="{{$product->name}}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Kategori</label>
+                                        <select class="form-control" name="category_id" id="">
+                                            @foreach ($categories as $item)
+                                                <option {{$product->category_id == $item->id ? 'selected' : ''}}   value="{{$item->id}}">{{$item->name}}</option>
                                             @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Fiyat</label>
+                                        <input type="text" name="price"  class="form-control" id="exampleInputEmail1" placeholder="Fiyat" required value="{{$product->price}}">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                                </form>
 
                             </div>
                         </div><!-- end card-->
                     </div>
-
-
                 </div>
 
 
@@ -280,5 +212,6 @@
         tr.shown td.details-control {
             background: url('assets/plugins/datatables/img/details_close.png') no-repeat center center;
         }
+
     </style>
 @endsection
