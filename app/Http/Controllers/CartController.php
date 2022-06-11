@@ -26,29 +26,61 @@ class CartController extends Controller
             return redirect()->route('login')->with('mesaj')->with('message','Alışveriş yapmak için giriş yapmalısınız')->with('message_type','warning');
         }
 
-        $product = Product::find($request->id);
+        if(Carts::content()->count()==0){
+                $product = Product::find($request->id);
+                $cartitem = Carts::add($product->id, $product->name, 1, $product->price,['options' => ['shop_id' => $product->shop_id]]);
 
-        $cartitem = Carts::add($product->id, $product->name, 1, $product->price,['options' => ['shop_id' => $product->shop_id]]);
+                if (Auth::check()) {
+                    $active_cart_id = session('active_cart_id');
+        
+                    if (!isset($active_cart_id)) {
+                        $active_cart = Cart::create([
+                            'user_id' => Auth::id()
+                        ]);
+                        $active_cart_id = $active_cart->id;
+                        session()->put('active_cart_id', $active_cart_id);
+                    }
+        
+                    CartProduct::updateOrCreate(
+                        ['cart_id' => $active_cart_id, 'product_id' => $product->id],
+                        ['qty' => $cartitem->qty, 'total' => $product->price]
+                    );
+                }
+        
+                return redirect()->back()->with('message', 'Ürün Sepete Eklendi')->with('message_type', 'success');
+        }else{
+            $product = Product::find($request->id);
 
+            $shop_id = Carts::content()->first()->options['options']['shop_id'];
 
-        if (Auth::check()) {
-            $active_cart_id = session('active_cart_id');
+            if($product->shop_id==$shop_id){
+                $cartitem = Carts::add($product->id, $product->name, 1, $product->price,['options' => ['shop_id' => $product->shop_id]]);
 
-            if (!isset($active_cart_id)) {
-                $active_cart = Cart::create([
-                    'user_id' => Auth::id()
-                ]);
-                $active_cart_id = $active_cart->id;
-                session()->put('active_cart_id', $active_cart_id);
+                if (Auth::check()) {
+                    $active_cart_id = session('active_cart_id');
+        
+                    if (!isset($active_cart_id)) {
+                        $active_cart = Cart::create([
+                            'user_id' => Auth::id()
+                        ]);
+                        $active_cart_id = $active_cart->id;
+                        session()->put('active_cart_id', $active_cart_id);
+                    }
+        
+                    CartProduct::updateOrCreate(
+                        ['cart_id' => $active_cart_id, 'product_id' => $product->id],
+                        ['qty' => $cartitem->qty, 'total' => $product->price]
+                    );
+                }
+        
+                return redirect()->back()->with('message', 'Ürün Sepete Eklendi')->with('message_type', 'success');
+ 
+            }else{
+                return redirect()->route('cart')->with('message', 'İki Farklı Cafeden Sipariş Veremezsiniz.  Önce Sepeti Boşaltmanız Lazım')->with('message_type', 'warning');
             }
-
-            CartProduct::updateOrCreate(
-                ['cart_id' => $active_cart_id, 'product_id' => $product->id],
-                ['qty' => $cartitem->qty, 'total' => $product->price]
-            );
         }
+        
 
-        return redirect()->back()->with('message', 'Ürün Sepete Eklendi')->with('message_type', 'success');
     }
 
     public function emptycart()

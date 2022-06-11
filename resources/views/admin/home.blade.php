@@ -16,7 +16,7 @@
 
                     </div>
                 </div>
-                <!-- end row -->
+
                 <div class="row">
                     <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
                         <div class="card-box noradius noborder bg-danger">
@@ -40,7 +40,7 @@
                         <div class="card-box noradius noborder bg-warning">
                             <i class="fas fa-shopping-cart float-right text-white"></i>
                             <h6 class="text-white text-uppercase m-b-20">Sipariş</h6>
-                            <h1 class="m-b-20 text-white counter">320</h1>
+                            <h1 class="m-b-20 text-white counter">{{$waitOrder}}</h1>
                             <span class="text-white">Hazırlanmayı Bekleyen</span>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                         <div class="card-box noradius noborder bg-info">
                             <i class="far fa-envelope float-right text-white"></i>
                             <h6 class="text-white text-uppercase m-b-20">Sipariş</h6>
-                            <h1 class="m-b-20 text-white counter">58</h1>
+                            <h1 class="m-b-20 text-white counter">{{$completedOrder}}</h1>
                             <span class="text-white">Teslim Edilmiş</span>
                         </div>
                     </div>

@@ -10,4 +10,8 @@ class Cart extends Model
     use HasFactory;
     protected $table = 'carts';
     protected $guarded = [];
+
+    public function getCartProduct(){
+        return $this->hasMany('App\Models\CartProduct','cart_id');
+    }
 }

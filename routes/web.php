@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
@@ -36,7 +37,7 @@ Route::post('/topay', [PaymentController::class, 'toPay'])->name('toPay');
 Route::group(['prefix' => 'admin'], function () {
 
     Route::match(['get', 'post'], '/login', [UserController::class, 'login'])->name('admin.login');
-    // Route::get('/logout', [UserController::class, 'logout'])->name('admin.logout');
+    Route::get('/logout', [UserController::class, 'logout'])->name('admin.logout');
 
 
     Route::group(['middleware' => 'auth'], function () {
@@ -59,5 +60,12 @@ Route::group(['prefix' => 'admin'], function () {
 
         //ORDER
         Route::get('/order', [OrderController::class, 'index'])->name('admin.order');
+        Route::get('/order/{id}', [OrderController::class, 'detail'])->name('admin.order.detail');
+        Route::get('/order/delivery/{id}', [OrderController::class, 'delivery'])->name('admin.order.delivery');
+        
+        // SETTING
+        Route::get('/setting', [SettingController::class, 'index'])->name('admin.setting');
+        Route::post('/setting/edit', [SettingController::class, 'edit'])->name('admin.setting.edit');
+
     });
 });

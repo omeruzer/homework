@@ -21,16 +21,17 @@ class PaymentController extends Controller
     }
 
     public function toPay(){
-    
+
+        $shop_id = Carts::content()->first()->options['options']['shop_id'];
+
         Order::create([
-            'shop_id'=>2,
+            'shop_id'=>$shop_id,
             'cart_id'=>session('active_cart_id'),
             'amount'=> Carts::subtotal(),
             'name'=>request('name'),
             'email'=>request('email'),
             'scholl_no'=>request('schollNo'),
         ]);
-
 
         session()->forget('active_cart_id');
 

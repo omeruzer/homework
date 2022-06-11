@@ -17,7 +17,6 @@
                     </div>
                 </div>
                 <!-- end row -->
-
                 <div class="row">
                     <div class="col-xl-12">
                         @include('error')
@@ -25,65 +24,71 @@
                     </div>
                 </div>
 
-
                 <div class="row">
 
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12 col-xl-12">
                         <div class="card mb-3">
-
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table id="example3" class="table table-bordered table-hover display">
-                                        <thead>
-                                            <tr>
-                                                <th>Sipariş No</th>
-                                                <th>Sipariş Veren</th>
-                                                <th>Ürün adedi</th>
-                                                <th>Sipariş Tutarı</th>
-                                                <th>İşlemler</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($orders as $item)
-                                                @if (!$item->isCompleted)
-                                                    <tr>
-                                                        <th>SP-00{{ $item->id }}</th>
-                                                        <th>{{ $item->name }}</th>
-                                                        <th>{{ $item->name }}</th>
-                                                        <th>{{ number_format($item->amount,2,'.','') }}₺</th>
-                                                        <th>
-                                                            <div class="">
-                                                                <a href="{{ route('admin.order.detail', [$item->id]) }}">
-                                                                    <button class="btn btn-warning"><i
-                                                                            class="fa fa-search"></i></button></a>
-                                                            </div>
-                                                        </th>
-                                                    </tr>
-                                                @else
-                                                    <tr>
-                                                        <td>SP-00{{ $item->id }}</td>
-                                                        <td>{{ $item->name }}</td>
-                                                        <td>{{ $item->name }}</td>
-                                                        <td>{{ number_format($item->amount,2,'.','') }}₺</td>
-                                                        <td>
-                                                            <div class="">
-                                                                <a href="{{ route('admin.order.detail', [$item->id]) }}">
-                                                                    <button class="btn btn-warning"><i
-                                                                            class="fa fa-search"></i></button></a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                @endif
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+                                <div class="row ml-3">
+                                    <h3>Sipariş No : SP-00{{ $order->id }}</h3>
                                 </div>
+                                <hr>
+                                <div class="row ml-3">
+                                    <label for="">İsim Soyisim: {{ $order->name }}</label>
+                                </div>
+                                <div class="row ml-3">
+                                    <label for="">Okul No: {{ $order->scholl_no }}</label>
+                                </div>
+                                <div class="row ml-3">
+                                    <label for="">E-mail: {{ $order->email }}</label>
+                                </div>
+                                <div class="row ml-3">
+                                    <label for="">Sipariş Tutarı : {{ number_format($order->amount, 2, '.', '') }}
+                                        ₺</label>
+                                </div>
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <table id="example3" class="table table-bordered table-hover display">
+                                            <thead>
+                                                <tr>
+                                                    <th>Resim</th>
+                                                    <th>Ürün Ad</th>
+                                                    <th>Ürün Adet</th>
+                                                    <th>Ürün Fiyat</th>
+                                                    <th>Toplam</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($order->getCart->getCartProduct as $key => $item)
+                                                    <tr>
+                                                        <td style="width:10%" >
+                                                            <img style="width:100%"  src="{{$item->getProduct[0]->img}}" alt="" srcset="">
+                                                        </td>
+                                                        <td>{{$item->getProduct[0]->name}}</td>
+                                                        <td>{{$item->qty}}</td>
+                                                        <td>{{$item->getProduct[0]->price}} ₺</td>
+                                                        <td>{{$item->getProduct[0]->price*$item->qty}} ₺</td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                @if (!$order->isCompleted)
+                                    <div class="row">
+                                        <a href="{{ route('admin.order.delivery', [$order->id]) }}"><button
+                                                class="btn btn-success">Teslim Et</button></a>
+                                    </div>
+                                @else
+                                    <div class="row">
+                                        <button style="cursor: no-drop;" class="btn btn-success">Teslim Edildi</button>
+                                    </div>
+                                @endif
 
                             </div>
                         </div><!-- end card-->
                     </div>
-
-
                 </div>
 
 

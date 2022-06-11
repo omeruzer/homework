@@ -33,5 +33,12 @@ class UserController extends Controller
 
 
     return view('admin.login');
-}
+    }
+
+    public function logout(){
+        Auth::logout();
+        request()->session()->flush();
+        request()->session()->regenerate();
+        return redirect()->route('admin.login');
+    }
 }

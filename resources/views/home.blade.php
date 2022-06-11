@@ -50,7 +50,7 @@
 
             <div class="row mt-3">
                 @foreach ($shops as $item)
-                    <div class="col-md-3 mt-3">
+                    <div class="col-md-4 mt-3">
                         <div class="card" style="width: 18rem;">
                             <img src="{{$item->img}}"
                                 class="card-img-top" alt="...">

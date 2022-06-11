@@ -13,6 +13,10 @@ class ProductController extends Controller
 {
     public function index(){
 
+        if(!auth()->check()){
+            return redirect()->route('admin.login')->with('mesaj')->with('message','2.')->with('message_type','warning');
+        }
+
         $shop_id = Shop::where('user_id',Auth::id())->first();
 
         $products = Product::where('shop_id',$shop_id->user_id)->get();

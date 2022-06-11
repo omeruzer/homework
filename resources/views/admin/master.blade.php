@@ -63,11 +63,6 @@
                 <div id="sidebar-menu">
 
                     <ul>
-                        <li class="submenu">
-                            <a class="active" href="#">
-                                <span> Merhaba {{auth()->user()->name}} </span>
-                            </a>
-                        </li>
 
                         <li class="submenu">
                             <a href="{{ route('admin.home') }}">
@@ -97,7 +92,14 @@
                         </li>
 
                         <li class="submenu">
-                            <a href="slider.html">
+                            <a href="{{ route('admin.setting') }}">
+                                <i class="fas fa-envelope"></i>
+                                <span> Ayarlar </span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a href="{{route('admin.logout')}}">
                                 <i class="fas fa-photo-video"></i>
                                 <span> Çıkış Yap </span>
                             </a>
