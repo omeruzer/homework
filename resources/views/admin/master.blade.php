@@ -37,8 +37,7 @@
             <!-- LOGO -->
             <div class="headerbar-left">
                 <a href="index.html" class="logo">
-                    <img alt="Logo" src="/adminAssets/assets/images/logo.png" />
-                    <span>Nura Admin</span>
+                    <span>İSÜ Yemek</span>
                 </a>
             </div>
 
@@ -66,41 +65,41 @@
 
                         <li class="submenu">
                             <a href="{{ route('admin.home') }}">
-                                <i class="fas fa-user"></i>
+                                <i class="fa fa-home"></i>
                                 <span> Anasayfa </span>
                             </a>
                         </li>
 
                         <li class="submenu">
                             <a href="{{ route('admin.product') }}">
-                                <i class="fas fa-file-alt"></i>
+                                <i class="fa fa-list"></i>
                                 <span> Ürünler </span>
                             </a>
                         </li>
                         <li class="submenu">
                             <a href="{{ route('admin.category') }}">
-                                <i class="fas fa-file-alt"></i>
+                                <i class="fa fa-list"></i>
                                 <span> Kategoriler </span>
                             </a>
                         </li>
 
                         <li class="submenu">
                             <a href="{{ route('admin.order') }}">
-                                <i class="fas fa-envelope"></i>
+                                <i class="fa fa-shopping-cart"></i>
                                 <span> Siparişler </span>
                             </a>
                         </li>
 
                         <li class="submenu">
                             <a href="{{ route('admin.setting') }}">
-                                <i class="fas fa-envelope"></i>
+                                <i class="fa fa-wrench"></i>
                                 <span> Ayarlar </span>
                             </a>
                         </li>
 
                         <li class="submenu">
-                            <a href="{{route('admin.logout')}}">
-                                <i class="fas fa-photo-video"></i>
+                            <a href="{{ route('admin.logout') }}">
+                                <i class="fa fa-arrow-right"></i>
                                 <span> Çıkış Yap </span>
                             </a>
                         </li>
@@ -121,14 +120,13 @@
 
         <footer class="footer">
             <span class="text-right">
-                Copyright <a target="_blank" href="#">Company</a>
+                Copyright <a target="_blank" href="#">İSÜ</a>
             </span>
             <span class="float-right">
                 <!-- Copyright footer link MUST remain intact if you download free version. -->
                 <!-- You can delete the links only if you purchased the pro or extended version. -->
                 <!-- Purchase the pro or extended version with PHP version of this template: https://bootstrap24.com/template/nura-admin-4-free-bootstrap-admin-template -->
-                Powered by <a target="_blank" href="https://bootstrap24.com"
-                    title="Download free Bootstrap templates"><b>Bootstrap24.com</b></a>
+                Powered by <a target="_blank" href="#" title="Download free Bootstrap templates"><b>isü</b></a>
             </span>
         </footer>
 

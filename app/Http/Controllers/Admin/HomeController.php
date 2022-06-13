@@ -16,7 +16,13 @@ class HomeController extends Controller
 
         if(!auth()->check()){
             return redirect()->route('admin.login')->with('mesaj')->with('message','2.')->with('message_type','warning');
+        }else{
+            if(Auth::user()->isAdmin!=1){
+                Auth::logout();
+                return redirect()->route('admin.login');
+            }
         }
+
 
         $shop_id = Shop::where('user_id',Auth::id())->first();
 
