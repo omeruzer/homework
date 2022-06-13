@@ -28,8 +28,8 @@
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <div class="float-right">
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"><i
-                                    class="fa fa-plus"></i> Ekle</button>
+                            <button type="button" class="btn " style="background-color: #050C1F;color:#fff"
+                                data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"></i> Ekle</button>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <input type="submit" value="Kaydet" class="btn btn-info">
+                                    <input type="submit" value="Kaydet" class="btn " style="background-color: #050C1F;color:#fff">
                                 </div>
                             </div>
                         </div>
@@ -112,9 +112,12 @@
                                                     <td>
                                                         <div class="">
                                                             <a href="{{ route('admin.product.edit', [$item->id]) }}"><button
-                                                                class="btn btn-warning"><i
-                                                                    class="fa fa-edit"></i></button></a>                                                            <a href="{{ route('admin.product.remove', [$item->id]) }}"><button
-                                                                    class="btn btn-danger"><i
+                                                                    class="btn "
+                                                                    style="background-color: #0f4410;color:#fff"><i
+                                                                        class="fa fa-edit"></i></button></a> <a
+                                                                href="{{ route('admin.product.remove', [$item->id]) }}"><button
+                                                                    class="btn "
+                                                                    style="background-color: #640c0c;color:#fff"><i
                                                                         class="fa fa-trash"></i></button></a>
                                                         </div>
                                                     </td>

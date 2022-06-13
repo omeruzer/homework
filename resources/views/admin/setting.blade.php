@@ -50,7 +50,7 @@
                                       <input type="text" name="desc" id="" class="form-control" placeholder="Cafe Açıklaması" value="{{$shop->desc}}">
                                     </div>
                                     <div class="form-group">
-                                        <button class="btn btn-info">Güncelle</button>
+                                        <button class="btn " style="background-color: #050C1F;color:#fff">Güncelle</button>
                                     </div>
                                 </form>
                             </div>

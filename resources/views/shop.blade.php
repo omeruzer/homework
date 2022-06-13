@@ -13,10 +13,10 @@
 
             <!-- Shop Name -->
             <div class="row mt-3">
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
+                <div class="card" style="max-width: 550px;">
+                    <div class="row">
                         <div class="col-md-4">
-                            <img src="{{ $shop->img }}" class="img-fluid rounded-start" alt="...">
+                            <img  src="{{ $shop->img }}" class="img-fluid rounded-start shop-logo" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -46,7 +46,7 @@
                                     @if ($item->name == $today)
                                         <div class="accordion-item mt-3">
                                             <h2 class="accordion-header" id="flush-headingOne">
-                                                <button class="accordion-button collapsed" type="button"
+                                                <button class="accordion-button collapsed category-shop" type="button"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#flush-collapseOne{{ $item->id }}"
                                                     aria-expanded="false"
@@ -80,7 +80,7 @@
                                                                         @csrf
                                                                         <input type="hidden" name="id"
                                                                             value=" {{ $value->id }} ">
-                                                                        <button class="btn btn-success">
+                                                                        <button class="btn btn-info btn-shop">
                                                                             <i class="fa fa-plus"></i> Sepete Ekle
                                                                         </button>
                                                                     </form>
@@ -96,7 +96,7 @@
                                     @else
                                         <div class="accordion-item mt-3">
                                             <h2 class="accordion-header" id="flush-headingOne">
-                                                <button class="accordion-button collapsed" type="button"
+                                                <button class="accordion-button collapsed category-shop" type="button"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#flush-collapseOne{{ $item->id }}"
                                                     aria-expanded="false"
@@ -126,7 +126,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="add-card" style="">
-                                                                    <button class="btn btn-success" disabled>
+                                                                    <button class="btn btn-disabled" disabled>
                                                                         Sepete Ekleyemezsiniz
                                                                     </button>
                                                                 </div>
@@ -148,7 +148,7 @@
                                 @foreach ($categories as $item)
                                     <div class="accordion-item mt-3">
                                         <h2 class="accordion-header" id="flush-headingOne">
-                                            <button class="accordion-button collapsed" type="button"
+                                            <button class="accordion-button collapsed category-shop" type="button"
                                                 data-bs-toggle="collapse"
                                                 data-bs-target="#flush-collapseOne{{ $item->id }}"
                                                 aria-expanded="false" aria-controls="flush-collapseOne{{ $item->id }}">
@@ -180,7 +180,7 @@
                                                                     @csrf
                                                                     <input type="hidden" name="id"
                                                                         value=" {{ $value->id }} ">
-                                                                    <button class="btn btn-success">
+                                                                    <button class="btn btn-info btn-shop">
                                                                         <i class="fa fa-plus"></i> Sepete Ekle
                                                                     </button>
                                                                 </form>

@@ -1,3 +1,41 @@
+/* Header */
+.navbar {
+    background-color: #050C1F;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+.nav-link:hover {
+    color: gray;
+}
+
+.navbar-brand img {
+    width: 200px;
+}
+
+/* Anasayfa */
+.home-card{
+    border-radius: 10%;
+    margin-bottom: 50px;
+}
+.slider-img{
+    height:500px;
+    width: 100%;
+}
+.home-card img{
+    border-radius: 10% 10%;
+}
+
+.home-btn{
+    background-color: #050C1F;
+    border: none;
+}
+.home-btn:hover{
+    background-color: gray;
+}
+
 /* Mağaza Sayfası */
 .product-card .img img {
     width: 150px;
@@ -11,6 +49,29 @@
 
 .product {
     display: flex;
+}
+
+.btn-shop{
+    background-color: #050C1F;
+    border: none;
+}
+.btn-shop:hover{
+    background-color: gray;
+}
+.category-shop{
+    color: #050C1F;
+}
+h3{
+    color: #050C1F;
+}
+.shop-logo{
+    width: 90%;
+}
+.card-title{
+    color: #050C1F;
+}
+.cart-text{
+    color: #050C1F;
 }
 
 .add-card {
@@ -43,9 +104,46 @@
 
 }
 
+.btn-info{
+    background-color: #050C1F;
+    color: #fff;
+    border: none;
+}
+
+
+.btn-info:hover{
+    background-color: gray;
+}
+.btn-info:focus{
+    background-color: gray;
+    border: none;
+}
+.btn-info:active{
+    background-color: gray;
+    border: none;
+}
+.btn-danger{
+    background-color: #640c0c;
+    color: #fff;
+    border: none;
+}
+
+.btn-success{
+    background-color: #0f4410;
+    color: #fff;
+    border: none;
+}
+
+.btn-disabled{
+    background-color: #000000;
+    color: #fff;
+    border: none;
+}
+
+
 .login-form {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 30px;
     border-radius: 10%;
-        
+
 }

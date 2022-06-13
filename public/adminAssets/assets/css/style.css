@@ -365,7 +365,7 @@ a {
 }
 
 .headerbar .headerbar-left {
-    background: #2a3542;
+    background: #050C1F;
     float: left;
     text-align: center;
     height: 50px;
@@ -383,7 +383,7 @@ a {
 }
 
 .navbar-custom {
-    background-color: #2a3542;
+    background-color: #050C1F;
     border-radius: 0;
     margin-bottom: 0;
     padding: 0 10px;
@@ -423,7 +423,7 @@ a {
     top: 50px;
     width: 250px;
     z-index: 1000;
-    background: #2a3542;
+    background: #050C1F;
     bottom: 70px;
     margin-bottom: -70px;
     margin-top: 0;
@@ -1559,7 +1559,7 @@ a.btn:focus {
     width: 100%;
     padding: 0 10px;
     color: #fff;
-    background: #2a3542;
+    background: #050C1F;
     text-align: left
 }
 

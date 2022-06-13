@@ -78,11 +78,11 @@
                                 @if (!$order->isCompleted)
                                     <div class="row">
                                         <a href="{{ route('admin.order.delivery', [$order->id]) }}"><button
-                                                class="btn btn-success">Teslim Et</button></a>
+                                                class="btn btn-success" style="background-color: #050C1F;color:#fff">Teslim Et</button></a>
                                     </div>
                                 @else
                                     <div class="row">
-                                        <button style="cursor: no-drop;" class="btn btn-success">Teslim Edildi</button>
+                                        <button style="cursor: no-drop;" class="btn btn-success" >Teslim Edildi</button>
                                     </div>
                                 @endif
 

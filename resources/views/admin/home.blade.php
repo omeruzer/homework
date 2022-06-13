@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="breadcrumb-holder">
-                            <h1 class="main-title float-left">Anasayfa</h1>
+                            <h1 class="main-title float-left" style="color: #050C1F">Anasayfa</h1>
                             <div class="clearfix"></div>
                         </div>
 
@@ -19,7 +19,7 @@
 
                 <div class="row">
                     <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
-                        <div class="card-box noradius noborder bg-danger">
+                        <div class="card-box noradius noborder " style="background-color: #050C1F">
                             <i class="far fa-user float-right text-white"></i>
                             <h6 class="text-white text-uppercase m-b-20">Ürün</h6>
                             <h1 class="m-b-20 text-white counter">{{$products}}</h1>
@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
-                        <div class="card-box noradius noborder bg-purple">
+                        <div class="card-box noradius noborder " style="background-color: #640c0c">
                             <i class="fas fa-download float-right text-white"></i>
                             <h6 class="text-white text-uppercase m-b-20">Kategori</h6>
                             <h1 class="m-b-20 text-white counter">{{$categories}}</h1>
@@ -37,7 +37,7 @@
                     </div>
 
                     <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
-                        <div class="card-box noradius noborder bg-warning">
+                        <div class="card-box noradius noborder " style="background-color: #0f4410">
                             <i class="fas fa-shopping-cart float-right text-white"></i>
                             <h6 class="text-white text-uppercase m-b-20">Sipariş</h6>
                             <h1 class="m-b-20 text-white counter">{{$waitOrder}}</h1>
@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
-                        <div class="card-box noradius noborder bg-info">
+                        <div class="card-box noradius noborder " style="background-color: gray">
                             <i class="far fa-envelope float-right text-white"></i>
                             <h6 class="text-white text-uppercase m-b-20">Sipariş</h6>
                             <h1 class="m-b-20 text-white counter">{{$completedOrder}}</h1>

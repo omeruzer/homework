@@ -38,7 +38,7 @@
                                             <tr>
                                                 <th>Sipariş No</th>
                                                 <th>Sipariş Veren</th>
-                                                <th>Ürün adedi</th>
+                                                <th>Okul No</th>
                                                 <th>Sipariş Tutarı</th>
                                                 <th>İşlemler</th>
                                             </tr>
@@ -49,12 +49,12 @@
                                                     <tr>
                                                         <th>SP-00{{ $item->id }}</th>
                                                         <th>{{ $item->name }}</th>
-                                                        <th>{{ $item->name }}</th>
+                                                        <th>{{ $item->scholl_no }}</th>
                                                         <th>{{ number_format($item->amount,2,'.','') }}₺</th>
                                                         <th>
                                                             <div class="">
                                                                 <a href="{{ route('admin.order.detail', [$item->id]) }}">
-                                                                    <button class="btn btn-warning"><i
+                                                                    <button class="btn" style="background-color: #050C1F;color:#fff"><i
                                                                             class="fa fa-search"></i></button></a>
                                                             </div>
                                                         </th>
@@ -63,12 +63,12 @@
                                                     <tr>
                                                         <td>SP-00{{ $item->id }}</td>
                                                         <td>{{ $item->name }}</td>
-                                                        <td>{{ $item->name }}</td>
+                                                        <td>{{ $item->scholl_no }}</td>
                                                         <td>{{ number_format($item->amount,2,'.','') }}₺</td>
                                                         <td>
                                                             <div class="">
                                                                 <a href="{{ route('admin.order.detail', [$item->id]) }}">
-                                                                    <button class="btn btn-warning"><i
+                                                                    <button class="btn" style="background-color: #050C1F;color:#fff"><i
                                                                             class="fa fa-search"></i></button></a>
                                                             </div>
                                                         </td>

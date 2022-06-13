@@ -9,7 +9,8 @@
     <meta name="author" content="Your website">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/adminAssets/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/985961917925453836/985974421086937128/unknown.png" type="image/x-icon">
+
 
     <!-- Bootstrap CSS -->
     <link href="/adminAssets/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -37,7 +38,7 @@
             <!-- LOGO -->
             <div class="headerbar-left">
                 <a href="index.html" class="logo">
-                    <span>İSÜ Yemek</span>
+                    <span>ISUCafetaries</span>
                 </a>
             </div>
 

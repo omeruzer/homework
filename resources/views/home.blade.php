@@ -17,13 +17,13 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://picsum.photos/800/280/?image=52" class="d-block w-100" alt="...">
+                                <img class="slider-img" src="https://aday.istinye.edu.tr/wp-content/uploads/2021/05/ISU09087-scaled-1.jpg" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://picsum.photos/800/280/?image=52" class="d-block w-100" alt="...">
+                                <img class="slider-img"  src="https://udef.org.tr/media/universities/gallery-images/ba48d800b02dd4616bbe23e747f9149a4.jpeg" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://picsum.photos/800/280/?image=52" class="d-block w-100" alt="...">
+                                <img class="slider-img" src="https://www.istinye.edu.tr/sites/betatest.istinye.edu.tr/files/2018-09/2_35.jpg" class="d-block w-100" alt="...">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>
-
+            <hr>
             <div class="row mt-3">
                 <div class="col-md-12">
                     <div class="" style="text-align: center;">
@@ -51,12 +51,12 @@
             <div class="row mt-3">
                 @foreach ($shops as $item)
                     <div class="col-md-4 mt-3">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card home-card" style="width: 18rem;">
                             <img src="{{$item->img}}"
                                 class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{$item->name}}</h5>
-                                <a href="{{route('shop',[$item->id])}}" class="btn btn-primary">Sipariş Ver</a>
+                                <a href="{{route('shop',[$item->id])}}" class="btn btn-primary home-btn">Sipariş Ver</a>
                             </div>
                         </div>
                     </div>

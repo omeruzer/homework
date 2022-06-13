@@ -1,7 +1,7 @@
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-ligth">
+    <nav class="navbar navbar-expand-lg bg-ligth"  >
         <div class="container">
-            <a class="navbar-brand" href="{{ route('home') }}">Yemek</a>
+            <a class="navbar-brand"href="{{ route('home') }}"><img src="https://www.istinye.edu.tr/sites/betatest.istinye.edu.tr/files/inline-images/logo_1_istinye.png" alt="" srcset=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">

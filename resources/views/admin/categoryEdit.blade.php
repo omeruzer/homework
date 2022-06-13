@@ -36,7 +36,7 @@
                                         <input type="text" name="name"  class="form-control" id="exampleInputEmail1" placeholder="Kategori Adı" required value="{{$category->name}}">
 
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                                    <button type="submit" class="btn" style="background-color: #050C1F;color:#fff">Güncelle</button>
                                 </form>
 
                             </div>

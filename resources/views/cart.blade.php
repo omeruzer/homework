@@ -25,7 +25,7 @@
                         <div class="" style="text-align: end;">
                             <form action="{{ route('emptycart') }}" method="post">
                                 @csrf
-                                <button class="btn btn-danger">Sepeti Boşalt</button>
+                                <button class="btn btn-info">Sepeti Boşalt</button>
                             </form>
                         </div>
                     </div>
@@ -89,8 +89,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Ödeme</h5>
                                     <p class="card-text">Adet : {{ Cart::count() }} </p>
-                                    <p class="card-text">Toplam : {{ Cart::subtotal() }} </p>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    <p class="card-text">Toplam : {{ Cart::subtotal() }} ₺</p>
+                                    <button type="button" class="btn btn-info" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal">
                                         Sipariş Ver ({{ Cart::subtotal() }}₺)
                                     </button>
@@ -130,7 +130,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Kapat</button>
-                                        <input type="submit" class="btn btn-primary"
+                                        <input type="submit" class="btn btn-info"
                                             value="Sipariş Ver ({{ Cart::subtotal() }}₺)">
                                         </div>
                                 </div>

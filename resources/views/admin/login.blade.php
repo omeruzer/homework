@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
 	<link rel="stylesheet" href="/adminAssets//assets/css/logins.css">
+    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/985961917925453836/985974421086937128/unknown.png" type="image/x-icon">
 
 
     <title>Yönetim Paneli</title>
@@ -44,7 +45,7 @@
                         <input type="password" name="password" autocomplete="off" class="form-control rounded-left" placeholder="Şifre" required>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="form-control btn btn-primary rounded submit px-3">Giriş</button>
+                        <button type="submit" style="background-color: #050C1F;color:#fff" class="form-control rounded submit px-3">Giriş</button>
                     </div>
                 </form>
 	        </div>
