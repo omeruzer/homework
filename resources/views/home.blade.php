@@ -56,7 +56,7 @@
                                 class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{$item->name}}</h5>
-                                <a href="{{route('shop',[$item->id])}}" class="btn btn-primary home-btn">Sipariş Ver</a>
+                                <a href="{{ route('shop',[$item->id]) }}" class="btn btn-primary home-btn">Sipariş Ver</a>
                             </div>
                         </div>
                     </div>

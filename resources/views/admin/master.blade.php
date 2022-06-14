@@ -37,8 +37,8 @@
 
             <!-- LOGO -->
             <div class="headerbar-left">
-                <a href="index.html" class="logo">
-                    <span>ISUCafetaries</span>
+                <a href="#" class="logo">
+                    <span>ISUCafeterias</span>
                 </a>
             </div>
 

@@ -14,7 +14,7 @@ class ShopController extends Controller
         $shop = Shop::where('id',$id)->first();
 
         $categories = Category::with('getProducts')->where('shop_id',$id)->get();
-
+       
         $today = Carbon::today()->format('d/m/Y');
 
         return view('shop',compact('shop','categories','today'));

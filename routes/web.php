@@ -25,7 +25,9 @@ Route::get('/info', [AuthController::class, 'info'])->name('info');
 Route::post('/infoPost', [AuthController::class, 'infoPost'])->name('infoPost');
 Route::get('/password', [AuthController::class, 'password'])->name('password');
 Route::post('/passwordPost', [AuthController::class, 'passwordPost'])->name('passwordPost');
+
 Route::post('/addcart', [CartController::class, 'add'])->name('addCart');
+
 Route::post('/emptycart', [CartController::class, 'emptycart'])->name('emptycart');
 Route::delete('/removecart/{rowId}', [CartController::class, 'removecart'])->name('removecart');
 Route::post('/increase/{rowId}', [CartController::class, 'increase'])->name('increase');
